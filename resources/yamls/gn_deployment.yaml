@@ -1,0 +1,13 @@
+apiVersion: api.practice.com/v1alpha1
+kind: Generic
+metadata:
+  name: gr-dep1
+spec:
+  # 指定不同资源对象，ex: "v1/pods or apps/v1/deployments"
+  gvr: "apps/v1/deployments"
+  # 模版内容，主要是各资源对象的template内容
+  template:
+    name: dep-test
+    namespace: default
+    image: "nginx:1.18-alpine"
+    replicas: 5

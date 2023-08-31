@@ -1,0 +1,14 @@
+apiVersion: api.practice.com/v1alpha1
+kind: Generic
+metadata:
+  name: gr-svc
+spec:
+  # 指定不同资源对象，ex: "v1/pods or apps/v1/deployment or v1/services"
+  gvr: "v1/services"
+  # 模版内容，主要是各资源对象的template内容
+  template:
+    name: svc-test
+    namespace: default
+    type: NodePort
+    port: 80
+    targetPort: 80
